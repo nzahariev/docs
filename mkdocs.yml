@@ -1,5 +1,5 @@
-site_name: mkdocs-jupyter demo
-site_description: mkdocs-jupyter demo website
+site_name: Anastasia's Docs
+site_description: Anastasia's Docs
 repo_url: https://github.com/kichukowa
 edit_uri: ""
 site_dir: dist
@@ -13,6 +13,9 @@ nav:
   - Demo - Ruby Notebook: ruby.ipynb
   - Demo - Variational inference nb: variational-inference-nb.ipynb
   - Demo - Variational inference script: variational-inference-script.py
+  - Cheatsheets:
+      - Python Cheatsheet: python-cheatsheet.md
+      - Pandas Cheatsheet: pandas_cheatsheet.ipynb
 
 theme:
   name: material
