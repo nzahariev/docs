@@ -1,4 +1,4 @@
-# mkdocs-jupyter demo website
+# Anastasia's Docs Website
 
 ![mkdocs-jupyter](https://raw.githubusercontent.com/danielfrg/mkdocs-jupyter/main/docs/logo.png)
 
