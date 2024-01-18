@@ -2,4 +2,4 @@
 
 ![Header](img/github-header-image.png)
 
-Look at the sidebar to see the demo notebooks
+Look at the sidebar to see some docs.
