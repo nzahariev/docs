@@ -1,22 +1,23 @@
-site_name: Anastasia's Docs
-site_description: Anastasia's Docs
-repo_url: https://github.com/kichukowa
+site_name: Nencho's Docs
+site_description: Nencho's Docs
+repo_url: https://github.com/nzahariev
 edit_uri: ""
 site_dir: dist
 
 nav:
   - Home: index.md
-  - Markdown Cheatsheet in .md file: demo-md.md
-  - Jupyter Notebook Markdown: demo-nb-md.ipynb
-  - Jupyter Notebook Cells: demo-nb.ipynb
-  - A .py file (jupytext): demo-script.py
-  - Demo - Ruby Notebook: ruby.ipynb
-  - Demo - Variational inference nb: variational-inference-nb.ipynb
-  - Demo - Variational inference script: variational-inference-script.py
-  - Cheatsheets:
-      - Python Cheatsheet: python-cheatsheet.md
-      - Pandas Cheatsheet: pandas_cheatsheet.ipynb
-
+  - Python:
+      - Python Fundamentals: python-cheatsheet.md
+      - Pandas Fundamentals: pandas_cheatsheet.ipynb
+  - Containers:
+      - Kubernetes: kubernetes.md
+      - Docker: docker.md
+  - Linux:
+      - Linux Commands: linux.md
+      - Bash Scripting: bash.md
+      - Unix Text Processing: unix-text.md
+  - Cloud:
+      - AWS CLI: aws.md
 theme:
   name: material
   features:

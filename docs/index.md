@@ -1,5 +1,5 @@
-# Anastasia's Docs Website
+# Nencho's Docs Website
 
-![mkdocs-jupyter](https://raw.githubusercontent.com/danielfrg/mkdocs-jupyter/main/docs/logo.png)
+![Header](img/github-header-image.png)
 
 Look at the sidebar to see the demo notebooks
