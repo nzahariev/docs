@@ -16,7 +16,7 @@
 | kube-proxy        | `kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept` | `Daemonset` |
 | Container Runtime | `Is the software that is responsible for running containers. Kubernetes supported runtimes: Docker, rkt, runc and any [[https://github.com/opencontainers/runtime-spec][OCI runtime-spec]] implementation` | `Systemd service` |
 
-Master and Worker nodes ports 
+Master and Worker nodes ports
 ![alt text](img/ports.png)
 
 ### [Generators](https://kubernetes.io/docs/reference/kubectl/conventions/#generators)
