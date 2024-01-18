@@ -1,0 +1,2278 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Nencho's Docs">
+      
+      
+      
+      
+        <link rel="prev" href="../pandas_cheatsheet/">
+      
+      
+        <link rel="next" href="../docker/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Kubernetes - Nencho's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-3673QMK9C4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-3673QMK9C4",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-3673QMK9C4",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nencho&#39;s Docs" class="md-header__button md-logo" aria-label="Nencho's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nencho's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kubernetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nzahariev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nencho&#39;s Docs" class="md-nav__button md-logo" aria-label="Nencho's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Nencho's Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nzahariev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas_cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-plane-components-master-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Plane Components (Master Nodes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-componentsworker-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Components(Worker Nodes)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-and-logs-details-of-kubernetesdocker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration and Logs details of Kubernetes,Docker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-health-of-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check health of cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubelet-and-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubelet and Docker commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-networking-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes networking commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-cluster-upgrade-kubeadm-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes cluster upgrade kubeadm way
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcd-backup-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETCD Backup &amp; Restore
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicaset" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReplicaSet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentsscalerolling-updates-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployments,Scale,Rolling Updates &amp; Rollbacks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonset" class="md-nav__link">
+    <span class="md-ellipsis">
+      DaemonSet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      CronJob
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Namespace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serviceaccounts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Maintenance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bash Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unix-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unix Text Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-plane-components-master-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Plane Components (Master Nodes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-componentsworker-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Components(Worker Nodes)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-and-logs-details-of-kubernetesdocker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration and Logs details of Kubernetes,Docker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-health-of-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check health of cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubelet-and-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubelet and Docker commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-networking-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes networking commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-cluster-upgrade-kubeadm-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes cluster upgrade kubeadm way
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcd-backup-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETCD Backup &amp; Restore
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicaset" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReplicaSet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentsscalerolling-updates-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployments,Scale,Rolling Updates &amp; Rollbacks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonset" class="md-nav__link">
+    <span class="md-ellipsis">
+      DaemonSet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      CronJob
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Namespace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serviceaccounts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Maintenance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h1>
+<h3 id="kubernetes-components"><a href="https://kubernetes.io/docs/concepts/overview/components/">Kubernetes Components</a><a class="headerlink" href="#kubernetes-components" title="Permanent link">&para;</a></h3>
+<h4 id="control-plane-components-master-nodes">Control Plane Components (Master Nodes)<a class="headerlink" href="#control-plane-components-master-nodes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Component Name</th>
+<th>Summary</th>
+<th>Runs As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kube-apiserver</td>
+<td><code>Exposes the Kubernetes API from master nodes.The API server is the front end for the Kubernetes control plane. Can run several instances of kube-apiserver and balance traffic between those instances</code></td>
+<td><code>Static Pod</code></td>
+</tr>
+<tr>
+<td>etcd</td>
+<td><code>Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data</code></td>
+<td><code>Static Pod</code> or <code>Systemd service</code></td>
+</tr>
+<tr>
+<td>kube-scheduler</td>
+<td><code>Component that watches for newly created Pods with no assigned node, and selects a node for them to run on</code></td>
+<td><code>Static Pod</code></td>
+</tr>
+<tr>
+<td>kube-controller-manager</td>
+<td><code>Component that runs controller processesnode. Controllers include : Node Controller, Replication Controller, Endpoints Controller, Service Account &amp; Token Controllers</code></td>
+<td><code>Static Pod</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="node-componentsworker-nodes">Node Components(Worker Nodes)<a class="headerlink" href="#node-componentsworker-nodes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Component Name</th>
+<th>Summary</th>
+<th>Runs As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubelet</td>
+<td><code>An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod</code></td>
+<td><code>System process</code></td>
+</tr>
+<tr>
+<td>kube-proxy</td>
+<td><code>kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept</code></td>
+<td><code>Daemonset</code></td>
+</tr>
+<tr>
+<td>Container Runtime</td>
+<td><code>Is the software that is responsible for running containers. Kubernetes supported runtimes: Docker, rkt, runc and any [[https://github.com/opencontainers/runtime-spec][OCI runtime-spec]] implementation</code></td>
+<td><code>Systemd service</code></td>
+</tr>
+</tbody>
+</table>
+<p>Master and Worker nodes ports
+<img alt="alt text" src="../img/ports.png" /></p>
+<h3 id="generators"><a href="https://kubernetes.io/docs/reference/kubectl/conventions/#generators">Generators</a><a class="headerlink" href="#generators" title="Permanent link">&para;</a></h3>
+<p><strong>You can create the following resources using kubectl run with the --generator flag</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Resource</strong></th>
+<th><strong>api group</strong></th>
+<th><strong>kubectl command</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pod</td>
+<td>v1</td>
+<td><code>kubectl run --generator=run-pod/v1</code></td>
+</tr>
+<tr>
+<td>Replication controller (deprecated)</td>
+<td>v1</td>
+<td><code>kubectl run --generator=run/v1</code></td>
+</tr>
+<tr>
+<td>Deployment (deprecated)</td>
+<td>apps/v1beta1</td>
+<td><code>kubectl run --generator=deployment/apps.v1beta1</code></td>
+</tr>
+<tr>
+<td>Job (deprecated)</td>
+<td>batch/v1</td>
+<td><code>kubectl run --generator=job/v1</code></td>
+</tr>
+<tr>
+<td>CronJob (deprecated)</td>
+<td>batch/v1beta1</td>
+<td><code>kubectl run --generator=cronjob/v1beta1</code></td>
+</tr>
+<tr>
+<td>CronJob (deprecated)</td>
+<td>batch/v2alpha1</td>
+<td><code>kubectl run --generator=cronjob/v2alpha1</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration-and-logs-details-of-kubernetesdocker">Configuration and Logs details of Kubernetes,Docker<a class="headerlink" href="#configuration-and-logs-details-of-kubernetesdocker" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Folder or File location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Config folder</td>
+<td><code>/etc/kubernetes/</code></td>
+</tr>
+<tr>
+<td>Manifests dir</td>
+<td><code>/etc/kubernetes/manifests</code></td>
+</tr>
+<tr>
+<td>Certificate files</td>
+<td><code>/etc/kubernetes/pki/</code></td>
+</tr>
+<tr>
+<td>Credentials to API server</td>
+<td><code>/etc/kubernetes/kubelet.conf</code></td>
+</tr>
+<tr>
+<td>Superuser credentials</td>
+<td><code>/etc/kubernetes/admin.conf</code></td>
+</tr>
+<tr>
+<td>kubectl config file</td>
+<td><code>~/.kube/config</code></td>
+</tr>
+<tr>
+<td>Kubernets working dir</td>
+<td><code>/var/lib/kubelet/</code></td>
+</tr>
+<tr>
+<td>Docker working dir</td>
+<td><code>/var/lib/docker/</code>, <code>/var/log/containers/</code></td>
+</tr>
+<tr>
+<td>Etcd working dir</td>
+<td><code>/var/lib/etcd/</code></td>
+</tr>
+<tr>
+<td>Network cni</td>
+<td><code>/etc/cni/net.d/</code></td>
+</tr>
+<tr>
+<td>Log files</td>
+<td><code>/var/log/pods/</code></td>
+</tr>
+<tr>
+<td>Kubelet logs</td>
+<td><code>/var/log/messages</code>, <code>/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log</code></td>
+</tr>
+<tr>
+<td>Kube-proxy</td>
+<td><code>/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log</code></td>
+</tr>
+<tr>
+<td>Kube-api-server</td>
+<td><code>/var/log/pods/kube-system_kube-apiserver*/kube-proxy/*.log</code></td>
+</tr>
+<tr>
+<td>Kube-controller</td>
+<td><code>/var/log/pods/kube-system_kube-controller*/kube-proxy/*.log</code></td>
+</tr>
+<tr>
+<td>Kube-scheduller</td>
+<td><code>/var/log/pods/kube-system_kube-scheduler*/kube-scheduler/*.log</code></td>
+</tr>
+<tr>
+<td>Env</td>
+<td><code>/etc/systemd/system/kubelet.service.d/10-kubeadm.conf</code></td>
+</tr>
+<tr>
+<td>Env</td>
+<td><code>export KUBECONFIG=/etc/kubernetes/admin.conf</code></td>
+</tr>
+<tr>
+<td>Audit logs</td>
+<td><code>/var/log/audit/audit.log</code></td>
+</tr>
+<tr>
+<td>Kubelet env file</td>
+<td><code>/etc/kubernetes/kubelet.env</code></td>
+</tr>
+<tr>
+<td>kubelet.service</td>
+<td><code>/etc/systemd/system/kubelet.service</code></td>
+</tr>
+<tr>
+<td>docker.service</td>
+<td><code>/etc/systemd/system/docker.service</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="check-health-of-cluster">Check health of cluster<a class="headerlink" href="#check-health-of-cluster" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Check cluster health</td>
+<td><code>kubectl get componentstatus</code></td>
+</tr>
+<tr>
+<td>Check etcd health</td>
+<td><code>kubectl get --raw=/healthz/etcd</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kubelet-and-docker-commands">Kubelet and Docker commands<a class="headerlink" href="#kubelet-and-docker-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Command or File location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Check Kubelet status</td>
+<td><code>service kubelet status</code> or <code>systemctl status kubelet.service</code></td>
+</tr>
+<tr>
+<td>Restart Kubelet</td>
+<td><code>service kubelet restart</code> or <code>systemctl restart kubelet.service</code></td>
+</tr>
+<tr>
+<td>Stop Kubelet</td>
+<td><code>service kubelet stop</code> or <code>systemctl stop kubelet.service</code></td>
+</tr>
+<tr>
+<td>Tail Kubelet logs</td>
+<td><code>journalctl -u kubelet.service -f</code></td>
+</tr>
+<tr>
+<td>Check Docker daemon status</td>
+<td><code>service docker status</code> or <code>systemctl status docker.service</code></td>
+</tr>
+<tr>
+<td>Restart Docker daemon</td>
+<td><code>service docker restart</code> or <code>systemctl restart docker.service</code></td>
+</tr>
+<tr>
+<td>Stop Docker daemon</td>
+<td><code>service docker stop</code> or <code>systemctl stop docker.service</code></td>
+</tr>
+<tr>
+<td>Tail Docker daemon logs</td>
+<td><code>journalctl -u docker.service -f</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kubernetes-networking-commands">Kubernetes networking commands<a class="headerlink" href="#kubernetes-networking-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List interfaces on the host</td>
+<td><code>ip link</code></td>
+</tr>
+<tr>
+<td>Lists IP address assigned to the interfaces</td>
+<td><code>ip addr</code></td>
+</tr>
+<tr>
+<td>View the routing table</td>
+<td><code>ip route</code></td>
+</tr>
+<tr>
+<td>Add the entries to the routing table</td>
+<td><code>ip route add 192.168.1.0/24 via 192.168.2.1</code></td>
+</tr>
+<tr>
+<td>Enable ipv4 forwarding</td>
+<td><code>echo 1 &gt; /proc/sys/net/ipv4/ip_forward</code></td>
+</tr>
+<tr>
+<td>Enable ipv6 forwarding</td>
+<td><code>echo 1 &gt; /proc/sys/net/ipv6/ip_forward</code></td>
+</tr>
+<tr>
+<td>list network namespaces</td>
+<td><code>ip netns</code></td>
+</tr>
+<tr>
+<td>Adding blue namespace</td>
+<td><code>ip netns add blue</code></td>
+</tr>
+<tr>
+<td>Exec to the particular namesapce</td>
+<td><code>ip netns exec NAMESPACE_NAME ip link</code> or <code>ip -n red link</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kubernetes-cluster-upgrade-kubeadm-way"><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">Kubernetes cluster upgrade kubeadm way</a><a class="headerlink" href="#kubernetes-cluster-upgrade-kubeadm-way" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install kubeadm new version</td>
+<td><code>apt-get upgrade -y kubeadm=1.19.0-00</code></td>
+</tr>
+<tr>
+<td>Upgrade plan</td>
+<td><code>kubeadm upgarade plan v1.19.0</code></td>
+</tr>
+<tr>
+<td>Apply upgrade plan</td>
+<td><code>kubeadm upgrade apply v1.19.0</code></td>
+</tr>
+<tr>
+<td>Update kubelet</td>
+<td><code>apt-get upgrade kubelet=1.19.0-00</code></td>
+</tr>
+<tr>
+<td>Update kubelet configuration</td>
+<td><code>kubeadm upgarde node config --kubelet-version v1.19.0</code></td>
+</tr>
+<tr>
+<td>Restart kubelet</td>
+<td><code>systemctl restart kubelet</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="etcd-backup-restore"><a href="https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md">ETCD Backup &amp; Restore</a><a class="headerlink" href="#etcd-backup-restore" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ETCD Backup</td>
+<td><code>ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert="/etc/kubernetes/pki/etcd/server.crt" --cert="/etc/kubernetes/pki/etcd/ca.crt" --key="/etc/kubernetes/pki/etcd/ca.key" snapshot save /tmp/snapshot-pre-boot.db</code></td>
+</tr>
+<tr>
+<td>ETCD Restore</td>
+<td><code>ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --name=master --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key --data-dir /var/lib/etcd-from-backup --initial-cluster=master=https://127.0.0.1:2380 --initial-cluster-token etcd-cluster-1 --initial-advertise-peer-urls=https://127.0.0.1:2380 snapshot restore /tmp/snapshot-pre-boot.db</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pod"><a href="https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod">Pod</a><a class="headerlink" href="#pod" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods</code></td>
+<td><code>po</code></td>
+<td>-</td>
+<td><code>true</code></td>
+<td><code>Pod</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create</td>
+<td><code>kubectl run nginx --generator=run-pod/v1 --image=nginx</code></td>
+</tr>
+<tr>
+<td>Create in particular namespace</td>
+<td><code>kubectl run nginx --generator=run-pod/v1 --image=nginx -n NAMEPSPACE</code></td>
+</tr>
+<tr>
+<td>Dry run,print object without creating it</td>
+<td><code>kubectl run POD_NAME --generator=run-pod/v1 --image=nginx --dry-run -o yaml</code></td>
+</tr>
+<tr>
+<td>Create from File</td>
+<td><code>kubectl create -f pod.yaml</code></td>
+</tr>
+<tr>
+<td>Create from File in particular namespace</td>
+<td><code>kubectl create -f pod.yaml -n NAMEPSPACE</code></td>
+</tr>
+<tr>
+<td>List pods</td>
+<td><code>kubectl get po</code> or <code>kubectl get pod</code> or <code>kubectl get pods</code></td>
+</tr>
+<tr>
+<td>List pods in all namespaces</td>
+<td><code>kubectl get pods --all-namespaces</code> or <code>kubectl get pods -A</code></td>
+</tr>
+<tr>
+<td>List pods with more information</td>
+<td><code>kubectl get pods -owide</code></td>
+</tr>
+<tr>
+<td>List pods information in custom columns</td>
+<td><code>kubectl get pod POD_NAME -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe pod</td>
+<td><code>kubectl describe pod POD_NAME</code></td>
+</tr>
+<tr>
+<td>Logs</td>
+<td><code>kubectl logs POD_NAME</code></td>
+</tr>
+<tr>
+<td>Logs (multi-container case)</td>
+<td><code>kubectl logs POD_NAME -c CONTAINER_NAME</code></td>
+</tr>
+<tr>
+<td>Tail pod logs</td>
+<td><code>kubectl logs -f POD_NAME</code></td>
+</tr>
+<tr>
+<td>Tail pods logs (multi-container case)</td>
+<td><code>kubectl logs -f POD_NAME -c CONTAINER_NAME</code></td>
+</tr>
+<tr>
+<td>Delete pod</td>
+<td><code>kubectl delete pod POD_NAME</code> or <code>kubectl delete -f pod.yaml</code> or <code>kubectl delete pod/POD_NAME</code></td>
+</tr>
+<tr>
+<td>Delete pod in particular namespace</td>
+<td><code>kubectl delete pod POD_NAME -n NAMESPACE</code></td>
+</tr>
+<tr>
+<td>Delete pod forcefully</td>
+<td><code>kubectl delete pod my-pod --grace-period=0 --force</code></td>
+</tr>
+<tr>
+<td>Get pod</td>
+<td><code>kubectl get pod POD_NAME</code></td>
+</tr>
+<tr>
+<td>Watch pod</td>
+<td><code>kubectl get pod POD_NAME --watch</code></td>
+</tr>
+<tr>
+<td>Patch pod</td>
+<td><code>kubectl patch pod valid-pod -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname"}]}}'</code></td>
+</tr>
+<tr>
+<td>Create and wrtie its spec to file</td>
+<td><code>kubectl run POD_NAME --image=nginx --restart=Never --dry-run -o yaml &gt; pod.yaml</code></td>
+</tr>
+<tr>
+<td>List pod in Json output format</td>
+<td><code>kubectl get pods -o json</code></td>
+</tr>
+<tr>
+<td>List pod in YAML output format</td>
+<td><code>kubectl get pods -o yaml</code></td>
+</tr>
+<tr>
+<td>Run command in existing pod</td>
+<td><code>kubectl exec POD_NAME -- ls /</code></td>
+</tr>
+<tr>
+<td>Run command in existing pod (multi-container case)</td>
+<td><code>kubectl exec POD_NAME -c CONTAINER_NAME -- ls /</code></td>
+</tr>
+<tr>
+<td>Exec to pod</td>
+<td><code>kubectl exec -it POD_NAME bash</code></td>
+</tr>
+<tr>
+<td>List Kubernetes critical pods</td>
+<td><code>kubectl get pods -n kube-system</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="replicaset"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">ReplicaSet</a><a class="headerlink" href="#replicaset" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>rs</code></td>
+<td><code>apps</code>,<code>extensions</code></td>
+<td><code>true</code></td>
+<td><code>ReplicaSet</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td><code>kubectl create -f replicaset.yaml</code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code>kubectl get rs</code> or <code>kubectl get replicaset</code> or <code>kubectl get replicasets</code></td>
+</tr>
+<tr>
+<td>List replicasets with more information</td>
+<td><code>kubectl get rs -owide</code></td>
+</tr>
+<tr>
+<td>List in all namespaces</td>
+<td><code>kubectl get rs --all-namespaces</code> or <code>kubectl get rs -A</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete rs REPLICASET_NAME</code> or <code>kubectl delete -f replicaset.yaml</code></td>
+</tr>
+<tr>
+<td>Get</td>
+<td><code>kubectl get rs REPLICASET_NAME</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="deploymentsscalerolling-updates-rollbacks"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployments,Scale,Rolling Updates &amp; Rollbacks</a><a class="headerlink" href="#deploymentsscalerolling-updates-rollbacks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deployments</code></td>
+<td><code>deploy</code></td>
+<td><code>apps</code>,<code>extensions</code></td>
+<td><code>true</code></td>
+<td><code>Deployment</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment Strategy Types</td>
+<td><code>Rolling-Update</code> or <code>Recreate</code></td>
+</tr>
+<tr>
+<td>Create Deployment</td>
+<td><code>kubectl create deployment DEPLOYMENT_NAME --image=busybox</code></td>
+</tr>
+<tr>
+<td>Run deployment with 2 replicas</td>
+<td><code>kubectl run POD_NAME --image=nginx --replicas=2 --port=80</code></td>
+</tr>
+<tr>
+<td>List deployments</td>
+<td><code>kubectl get deploy</code> or <code>kubectl get deployment</code> or <code>kubectl get deployments</code></td>
+</tr>
+<tr>
+<td>List deployments in all namespaces</td>
+<td><code>kubectl get deploy --all-namespaces</code> or <code>kubectl get deploy -A</code></td>
+</tr>
+<tr>
+<td>List deployments in particular namespace</td>
+<td><code>kubectl get deploy -n NAMESPACE</code></td>
+</tr>
+<tr>
+<td>List deployments with more information</td>
+<td><code>kubectl get deploy -owide</code></td>
+</tr>
+<tr>
+<td>Delete deployment</td>
+<td><code>kubectl delete deploy DEPLOYMENT_NAME</code> or <code>kubectl delete -f deployment.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular deployment</td>
+<td><code>kubectl get deploy DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Run deployment and expose it</td>
+<td><code>kubectl run DEPLOYMENT_NAME --image=nginx --port=80 --expose</code></td>
+</tr>
+<tr>
+<td>Update the nginx Pods to use the nginx:1.9.1 image instead of the nginx:1.7.9 image</td>
+<td><code>kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1 --record</code></td>
+</tr>
+<tr>
+<td>Edit the Deployment</td>
+<td><code>kubectl edit deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Deployment rollout status</td>
+<td><code>kubectl rollout status deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Deployment rollout history</td>
+<td><code>kubectl rollout history deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Rolling back deployment to previous version</td>
+<td><code>kubectl rollout undo deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Scaling deployment</td>
+<td><code>kubectl scale --replicas=2 deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Pausing deployment</td>
+<td><code>kubectl rollout pause deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Resuming deployment</td>
+<td><code>kubectl rollout resume deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe deployment</td>
+<td><code>kubectl describe deploy/DEPLOYMENT_NAME</code></td>
+</tr>
+<tr>
+<td>Describe all deployments</td>
+<td><code>kubectl describe deployments</code></td>
+</tr>
+<tr>
+<td>Watch deployment</td>
+<td><code>kubectl get deploy/DEPLOYMENT_NAME --watch</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="daemonset"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">DaemonSet</a><a class="headerlink" href="#daemonset" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>daemonsets</code></td>
+<td><code>ds</code></td>
+<td><code>apps</code>,<code>extensions</code></td>
+<td><code>true</code></td>
+<td><code>DaemonSet</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List daemonsets</td>
+<td><code>kubectl get ds</code> or <code>kubectl get daemonset</code> or <code>kubectl get daemonset</code></td>
+</tr>
+<tr>
+<td>List daemonsets in all namespaces</td>
+<td><code>kubectl get ds --all-namespaces</code> or <code>kubectl get ds -A</code></td>
+</tr>
+<tr>
+<td>List daemonsets with more information</td>
+<td><code>kubectl get ds -owide</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete ds DAEMONSET_NAME</code> or <code>kubectl delete -f daemonset.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular daemonset</td>
+<td><code>kubectl get ds DAEMONSET_NAME</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe Daemonset</td>
+<td><code>kubectl describe ds/DAEMONSET_NAME</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="jobs"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">Jobs</a><a class="headerlink" href="#jobs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jobs</code></td>
+<td>-</td>
+<td><code>batch</code></td>
+<td><code>true</code></td>
+<td><code>Job</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create</td>
+<td><code>kubectl create job my-job --image=busybox</code></td>
+</tr>
+<tr>
+<td>Create a job with command</td>
+<td><code>kubectl create job my-job --image=busybox -- date</code></td>
+</tr>
+<tr>
+<td>Create a job from a CronJob named "a-cronjob"</td>
+<td><code>kubectl create job test-job --from=cronjob/a-cronjob</code></td>
+</tr>
+<tr>
+<td>List jobs</td>
+<td><code>kubectl get jobs</code> or <code>kubectl get job</code></td>
+</tr>
+<tr>
+<td>List jobs in all namespaces</td>
+<td><code>kubectl get jobs --all-namespaces</code> or <code>kubectl get jobs -A</code></td>
+</tr>
+<tr>
+<td>List with more information</td>
+<td><code>kubectl get job -owide</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete jobs JOB_NAME</code> or <code>kubectl delete -f job.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular cronjob</td>
+<td><code>kubectl get cj cronjob_NAME</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe job</td>
+<td><code>kubectl describe jobs/CRRONJOB_NAME</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cronjob"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/">CronJob</a><a class="headerlink" href="#cronjob" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cronjobs</code></td>
+<td><code>cj</code></td>
+<td><code>batch</code></td>
+<td><code>true</code></td>
+<td><code>CronJob</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create with schedule</td>
+<td><code>kubectl create cronjob CRONJOB_NAME --image=busybox --schedule="*/1 * * * *"</code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code>kubectl get cj</code> or <code>kubectl get cronjob</code> or <code>kubectl get cronjobs</code></td>
+</tr>
+<tr>
+<td>List in all namespaces</td>
+<td><code>kubectl get cj --all-namespaces</code> or <code>kubectl get cj -A</code></td>
+</tr>
+<tr>
+<td>List with more information</td>
+<td><code>kubectl get cj -owide</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete cj CRONJOB_NAME</code> or <code>kubectl delete -f cronjob.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular cronjob</td>
+<td><code>kubectl get cj cronjob_NAME</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe cronjob</td>
+<td><code>kubectl describe cj/CRRONJOB_NAME</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="service"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a><a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>services</code></td>
+<td><code>svc</code></td>
+<td><code>-</code></td>
+<td><code>true</code></td>
+<td><code>Service</code></td>
+<td><code>[create delete get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Service Type</th>
+<th>Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ClusterIP</td>
+<td>Create service</td>
+<td><code>kubectl create service clusterip my-cs --tcp=5678:8080</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Create service in headless mode</td>
+<td><code>kubectl create service clusterip my-cs --clusterip="None"</code></td>
+</tr>
+<tr>
+<td>ExternalName</td>
+<td>Create an ExternalName service</td>
+<td><code>kubectl create service externalname my-ns --external-name example.com</code></td>
+</tr>
+<tr>
+<td>LoadBalancer</td>
+<td>Create a LoadBalancer service</td>
+<td><code>kubectl create service loadbalancer my-lbs --tcp=5678:8080</code></td>
+</tr>
+<tr>
+<td>NodePort</td>
+<td>Create a NodePort service</td>
+<td><code>kubectl create service nodeport my-ns --tcp=5678:8080</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td><code>kubectl get service</code> or <code>kubectl get svc</code></td>
+</tr>
+<tr>
+<td>List in all namespaces</td>
+<td><code>kubectl get service --all-namespaces</code> or <code>kubectl get svc -A</code></td>
+</tr>
+<tr>
+<td>List with more information</td>
+<td><code>kubectl get svc -owide</code> or <code>kubectl get service -owide</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete svc SERVICE_NAME</code> or <code>kubectl delete -f service.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular service</td>
+<td><code>kubectl get service SERVICE_NAME</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe service</td>
+<td><code>kubectl describe svc/SERVICE_NAME</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="namespace"><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespace</a><a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>ns</code></td>
+<td><code>-</code></td>
+<td><code>false</code></td>
+<td><code>Namespace</code></td>
+<td><code>[create delete get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td><code>kubectl get namespaces</code> or <code>kubectl get ns</code></td>
+</tr>
+<tr>
+<td>Create</td>
+<td><code>kubectl create ns TEST</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete ns TEST</code> or <code>kubectl delete -f namespace.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular namespace</td>
+<td><code>kubectl get ns TEST</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe service</td>
+<td><code>kubectl describe ns/TEST</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="serviceaccounts"><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Serviceaccounts</a><a class="headerlink" href="#serviceaccounts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>SHORTNAMES</th>
+<th>APIGROUP</th>
+<th>NAMESPACED</th>
+<th>KIND</th>
+<th>VERBS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>serviceaccounts</code></td>
+<td><code>sa</code></td>
+<td><code>-</code></td>
+<td><code>true</code></td>
+<td><code>ServiceAccount</code></td>
+<td><code>[create delete deletecollection get list patch update watch]</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verb Description</th>
+<th>Kubectl Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td><code>kubectl get sa</code></td>
+</tr>
+<tr>
+<td>Create</td>
+<td><code>kubectl create serviceaccount my-service-account</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>kubectl delete serviceaccount my-service-account</code> or <code>kubectl delete -f my-service-account.yaml</code></td>
+</tr>
+<tr>
+<td>Get particular sa</td>
+<td><code>kubectl get sa my-service-account</code></td>
+</tr>
+<tr>
+<td>Verbose Debug information/describe service</td>
+<td><code>kubectl describe sa/my-service-account</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-maintenance"><a href="https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/">Node Maintenance</a><a class="headerlink" href="#node-maintenance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mark node as unschedulable</td>
+<td><code>kubectl cordon $NODE_NAME</code></td>
+</tr>
+<tr>
+<td>Mark node as schedulable</td>
+<td><code>kubectl uncordon $NODE_NAME</code></td>
+</tr>
+<tr>
+<td>Drain node in preparation for maintenance</td>
+<td><code>kubectl drain $NODE_NAME</code></td>
+</tr>
+<tr>
+<td>Drain node with grace period of 15 mins</td>
+<td><code>kubectl drain $NODE_NAME --grace-period=900</code></td>
+</tr>
+<tr>
+<td>Drain node forcefully</td>
+<td><code>kubectl drain $NODE_NAME --force</code></td>
+</tr>
+<tr>
+<td>Ignore DaemonSet-managed pods while draining node</td>
+<td><code>kubectl drain $NODE_NAME --grace-period=900 --ignore-daemonsets=true</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View all events</td>
+<td><code>kubectl get events --all-namespaces</code> or <code>kubectl get events -A</code></td>
+</tr>
+<tr>
+<td>List Events sorted by timestamp</td>
+<td><code>kubectl get events --sort-by=.metadata.creationTimestamp</code></td>
+</tr>
+<tr>
+<td>List Events only in kube-system namespace</td>
+<td><code>kubectl get events -n kube-system</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "content.code.copy"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2564 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Nencho's Docs">
+      
+      
+      
+      
+        <link rel="prev" href="../docker/">
+      
+      
+        <link rel="next" href="../bash/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Linux Commands - Nencho's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-3673QMK9C4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-3673QMK9C4",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-3673QMK9C4",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nencho&#39;s Docs" class="md-header__button md-logo" aria-label="Nencho's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nencho's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nzahariev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nencho&#39;s Docs" class="md-nav__button md-logo" aria-label="Nencho's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Nencho's Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nzahariev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas_cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux Commands
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Linux Commands
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-and-directory-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      File and directory commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      File permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-and-hardware-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      System and Hardware information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vivim-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vi/Vim-commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vi/Vim-commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-with-vi-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Start with Vi Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cursor-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cursor movement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Cursor movement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#move-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move cursor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-one-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump one word
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-to-start-or-end-of-a-line-or-next-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump to start or end of a line or next line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-sides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move sides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging-and-scrolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paging and Scrolling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserting-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting Text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inserting Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append" class="md-nav__link">
+    <span class="md-ellipsis">
+      Append
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-a-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open a line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut-copy-paste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cut, Copy &amp; Paste
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exiting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toptaskmanager-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top/TaskManager Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top/TaskManager Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kill-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kill Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kill Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kill-command-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      kill Command Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-command-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      History Command Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="History Command Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history-command-options_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      history Command Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curl-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curl Command
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bash Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unix-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unix Text Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-and-directory-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      File and directory commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      File permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-and-hardware-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      System and Hardware information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vivim-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vi/Vim-commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vi/Vim-commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-with-vi-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Start with Vi Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cursor-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cursor movement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Cursor movement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#move-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move cursor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-one-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump one word
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-to-start-or-end-of-a-line-or-next-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump to start or end of a line or next line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-sides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move sides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging-and-scrolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paging and Scrolling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserting-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting Text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inserting Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append" class="md-nav__link">
+    <span class="md-ellipsis">
+      Append
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-a-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open a line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut-copy-paste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cut, Copy &amp; Paste
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exiting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toptaskmanager-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top/TaskManager Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top/TaskManager Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kill-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kill Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kill Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kill-command-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      kill Command Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-command-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      History Command Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="History Command Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history-command-options_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      history Command Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curl-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curl Command
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="linux-commands">Linux Commands<a class="headerlink" href="#linux-commands" title="Permanent link">&para;</a></h1>
+<h3 id="user-information">User Information<a class="headerlink" href="#user-information" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>who</strong> It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.</p>
+<ol>
+<li>Login name of the user</li>
+<li>User terminal</li>
+<li>Date &amp; Time of login</li>
+<li>Remote host name of the user</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>who
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudheer<span class="w"> </span>:0<span class="w"> </span><span class="m">2019</span>-08-04<span class="w"> </span><span class="m">01</span>:21<span class="w"> </span><span class="o">(</span>:0<span class="o">)</span>
+</code></pre></div>
+<ol>
+<li><strong>whoami:</strong> It display the system’s username</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>whoami
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudheer
+</code></pre></div>
+<ol>
+<li><strong>id:</strong> It display the user identification(the real and effective user and group IDs) information</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>id
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>sj<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>sj<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>sj<span class="o">)</span>,4<span class="o">(</span>adm<span class="o">)</span>,24<span class="o">(</span>cdrom<span class="o">)</span>,27<span class="o">(</span>sudo<span class="o">)</span>,30<span class="o">(</span>dip<span class="o">)</span>,46<span class="o">(</span>plugdev<span class="o">)</span>,120<span class="o">(</span>lpadmin<span class="o">)</span>,131<span class="o">(</span>lxd<span class="o">)</span>,132<span class="o">(</span>sambashare<span class="o">)</span>
+</code></pre></div>
+4. <strong>groups:</strong> This command is used to display all the groups for which the user belongs to.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>group
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sj:<span class="w"> </span>sj,<span class="w"> </span>adm,<span class="w"> </span>cdrom,<span class="w"> </span>sudo,<span class="w"> </span>dip,<span class="w"> </span>plugdev,<span class="w"> </span>lpadmin,<span class="w"> </span>lxd,<span class="w"> </span>sambashare
+</code></pre></div>
+<ol>
+<li><strong>finger:</strong>  Used to check the information of any currently logged in users. i.e, It displays users login time, tty (name), idle time, home directory, shell name etc.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>finger
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Login<span class="w">     </span>Name<span class="w">       </span>Tty<span class="w">      </span>Idle<span class="w">  </span>Login<span class="w"> </span>Time<span class="w">   </span>Office<span class="w">     </span>Office<span class="w"> </span>Phone
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sj<span class="w">        </span>sj<span class="w">        </span>*:0<span class="w">             </span>Aug<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">01</span>:27<span class="w"> </span><span class="o">(</span>:0<span class="o">)</span>
+</code></pre></div>
+<p>This may not be available by default in many linux machines. In this case, you need to install it manually.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>finger
+</code></pre></div>
+6. <strong>users:</strong> Displays usernames of all users currently logged on the system.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>users
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sj
+</code></pre></div>
+<ol>
+<li>
+<p><strong>grep:</strong> It  is a powerful pattern searching tool to find information about a specific user from the system accounts file: /etc/passwd.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>sj<span class="w"> </span>/etc/passwd
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sj:x:1000:1000:sj,,,:/home/sj:/bin/bash
+</code></pre></div>
+</li>
+<li>
+<p><strong>W Command:</strong> It(W) is a command-line utility that displays information about currently logged in users and what each user is doing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>w<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Example:
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>w
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w"> </span><span class="m">18</span>:45:04<span class="w"> </span>up<span class="w">  </span><span class="m">2</span>:09,<span class="w">  </span><span class="m">1</span><span class="w"> </span>user,<span class="w">  </span>load<span class="w"> </span>average:<span class="w"> </span><span class="m">0</span>.09,<span class="w"> </span><span class="m">0</span>.07,<span class="w"> </span><span class="m">0</span>.02
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>USER<span class="w">     </span>TTY<span class="w">      </span>FROM<span class="w">             </span>LOGIN@<span class="w">   </span>IDLE<span class="w">   </span>JCPU<span class="w">   </span>PCPU<span class="w"> </span>WHAT
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>sj<span class="w">       </span>:0<span class="w">       </span>:0<span class="w">               </span><span class="m">01</span>:27<span class="w">   </span>?xdm?<span class="w">   </span><span class="m">1</span>:14<span class="w">   </span><span class="m">0</span>.01s<span class="w"> </span>/usr/lib/gdm3/g
+</code></pre></div>
+</li>
+<li>
+<p><strong>last or lastb:</strong> Displays a list of last logged in users on the system. You can pass user names to display their login and hostname details.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>last<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>username...<span class="o">]</span><span class="w"> </span><span class="o">[</span>tty...<span class="o">]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Example:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>last
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>sj<span class="w">       </span>:0<span class="w">           </span>:0<span class="w">               </span>Fri<span class="w"> </span>Aug<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">01</span>:27<span class="w">    </span>gone<span class="w"> </span>-<span class="w"> </span>no<span class="w"> </span><span class="nb">logout</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>reboot<span class="w">   </span>system<span class="w"> </span>boot<span class="w">  </span><span class="m">5</span>.4.0-29-generic<span class="w"> </span>Fri<span class="w"> </span>Aug<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">01</span>:27<span class="w">   </span>still<span class="w"> </span>running
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>sj<span class="w">       </span>:0<span class="w">           </span>:0<span class="w">               </span>Wed<span class="w"> </span>Jul<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">11</span>:46<span class="w"> </span>-<span class="w"> </span>crash<span class="w"> </span><span class="o">(</span><span class="m">29</span>+13:40<span class="o">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>reboot<span class="w">   </span>system<span class="w"> </span>boot<span class="w">  </span><span class="m">5</span>.4.0-29-generic<span class="w"> </span>Wed<span class="w"> </span>Jul<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">11</span>:45<span class="w">   </span>still<span class="w"> </span>running
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>sj<span class="w">       </span>:0<span class="w">           </span>:0<span class="w">               </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">21</span>:04<span class="w"> </span>-<span class="w"> </span>crash<span class="w"> </span><span class="o">(</span><span class="m">75</span>+14:41<span class="o">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>reboot<span class="w">   </span>system<span class="w"> </span>boot<span class="w">  </span><span class="m">5</span>.4.0-29-generic<span class="w"> </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">21</span>:03<span class="w">   </span>still<span class="w"> </span>running
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>wtmp<span class="w"> </span>begins<span class="w"> </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">21</span>:03:56<span class="w"> </span><span class="m">2020</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>lastlog:</strong> The <code>lastlog</code> command is used to find the details of a recent login of all users or of a given user.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ lastlog
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Username         Port     From             Latest
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>root                                       **Never logged in**
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>daemon                                     **Never logged in**
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>bin                                        **Never logged in**
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>sys                                        **Never logged in**
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>sync                                       **Never logged in**
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>games                                      **Never logged in**
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>man                                        **Never logged in**
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>lp                                         **Never logged in**
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>mail                                       **Never logged in**
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>news                                       **Never logged in**
+</code></pre></div>
+</li>
+</ol>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="file-and-directory-commands">File and directory commands<a class="headerlink" href="#file-and-directory-commands" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>pwd</strong> The pwd(Present Working Directory) command is used to print the name of the present/current working directory starting from the root.
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">pwd</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>/home/sj/Desktop/Linux
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>ls</strong>: The <code>ls</code> command is used to list files or directories. It also accepts some flags or options that changes how files or directories are listed in your terminal.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w"> </span>Syntax:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w"> </span>ls<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span><span class="w"> </span><span class="o">[</span>directory<span class="o">]</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w"> </span>Example:
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w"> </span>$<span class="w"> </span>ls
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w"> </span>bin<span class="w"> </span>dev<span class="w"> </span>lib<span class="w"> </span>libx32<span class="w"> </span>mnt<span class="w">  </span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w"> </span>//Listing<span class="w"> </span>files<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>directories<span class="w"> </span>with<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>rever<span class="w"> </span>order
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w"> </span>$<span class="w"> </span>ls<span class="w"> </span>-ltr
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w"> </span>drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>sj<span class="w"> </span>sj<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>Videos
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w"> </span>drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>sj<span class="w"> </span>sj<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>Templates
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w"> </span>drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>sj<span class="w"> </span>sj<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>Public
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w"> </span>//Home<span class="w"> </span>directory
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w"> </span>$<span class="w"> </span>ls<span class="w"> </span>~
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w"> </span>Desktop<span class="w">    </span>Downloads<span class="w">  </span>Pictures<span class="w">  </span>Sudheer<span class="w">    </span><span class="nb">test</span><span class="w">   </span>test.txt
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w"> </span>Documents<span class="w">  </span>Music<span class="w">      </span>Public<span class="w">    </span>Templates<span class="w">  </span>test1<span class="w">  </span>Videos
+</code></pre></div>
+<p>Below are the list of possible options for <code>ls</code> command,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>-a Show all (including hidden)
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>-R Recursive list
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>-r Reverse order
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>-t Sort by last modified
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>-S Sort by file size
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>-l Long listing format
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>-1 One file per line
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>-m Comma-­sep­arated output
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>-Q Quoted output
+</code></pre></div>
+</li>
+<li>
+<p><strong>mkdir</strong> The mkdir(make directory) command allows users to create directories or folders.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>ubuntu
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span>ls
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>ubuntu
+</code></pre></div>
+<p>The option '-p' is used to create multiple directories or parent directories at once.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>dir1/dir2/dir3
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>dir1/dir2/dir3
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>~/Desktop/Linux/dir1/dir2/dir3$
+</code></pre></div>
+<ol>
+<li>
+<p><strong>rmdir</strong>: The rmdir(remove directories) is used to remove <em>empty</em> directories. Can be used to delete multiple empty directories as well. Safer to use compared to <code>rm -r FolderName</code>. This command can also be forced to delete non-empty directories.</p>
+</li>
+<li>
+<p>Remove empty directory:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rmdir<span class="w"> </span>FolderName
+</code></pre></div>
+<ol>
+<li>Remove multiple directories:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>rmdir<span class="w"> </span>FolderName1<span class="w"> </span>FolderName2<span class="w"> </span>FolderName3
+</code></pre></div>
+<ol>
+<li>Remove non-empty directories:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>rmdir<span class="w"> </span>FolderName1<span class="w"> </span>--ignore-fail-on-non-empty
+</code></pre></div>
+<ol>
+<li>Remove entire directory tree. This command is similar to <code>rmdir a/b/c a/b a</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rmdir<span class="w"> </span>-p<span class="w"> </span>a/b/c
+</code></pre></div>
+<ol>
+<li><strong>rm</strong>: The rm(remove) command is used to remove objects such as files, directories, symbolic links etc from the file system.</li>
+<li>Remove file: The rm command is used to remove or delete a file
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>rm<span class="w"> </span>file_name
+</code></pre></div></li>
+<li>Remove file forcefully: The rm command with -f option is used for removal of file without prompting for confirmation.
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>rm<span class="w"> </span>-f<span class="w"> </span>filename
+</code></pre></div></li>
+<li>Remove directory: The rm command with -r option is used to remove the directory and its contents recursively.
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>myDir
+</code></pre></div></li>
+<li>Remove directory forcefully: The rm command with -rf option is used to forcefully remove directory recursively.
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>myDir
+</code></pre></div></li>
+<li><strong>touch</strong>: The touch command is is used to create, change and modify timestamps of a file without any content.</li>
+<li><strong>Create a new file:</strong> You can create a single file at a time using touch command. The file created is an empty file.
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>touch<span class="w"> </span>file_name
+</code></pre></div></li>
+<li><strong>Create multiple files:</strong> You can create the multiple numbers of files at the same time.
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>touch<span class="w"> </span>file1_name<span class="w"> </span>file2_name<span class="w"> </span>file3_name
+</code></pre></div></li>
+<li><strong>Change access time:</strong> The touch command with <code>a</code> option is used to change the access time of a file.
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>touch<span class="w"> </span>-a<span class="w"> </span>file_name
+</code></pre></div></li>
+<li><strong>Change modification time:</strong> The touch command with <code>m</code> option is used to change the modified time.
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>touch<span class="w"> </span>-m<span class="w"> </span>file_name
+</code></pre></div></li>
+<li>
+<p><strong>Use timestamp of other file:</strong> The touch command with <code>r</code> option is used to get timestamp of another file.
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>touch<span class="w"> </span>-r<span class="w"> </span>file2<span class="w"> </span>file1
+</code></pre></div></p>
+<p>In the above example, we get the timestamp of file1 for file2.</p>
+</li>
+<li>
+<p><strong>Create file with Specific time:</strong> The touch command with 't' option is used to create a file with specified time.
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>touch<span class="w"> </span>-t<span class="w"> </span><span class="m">1911010000</span><span class="w"> </span>file_name
+</code></pre></div></p>
+</li>
+<li><strong>cat</strong>: The cat command is used to create single or multiple files, view contain of file, concatenate files and redirect output in terminal or files.
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>$<span class="w"> </span>cat<span class="w"> </span><span class="o">[</span>OPTION<span class="o">]</span><span class="w"> </span><span class="o">[</span>FILE<span class="o">]</span>...
+</code></pre></div></li>
+<li><strong>Create a file:</strong> Used to create a file with specific name, content and press exit using <code>CTRL + D</code>
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>file_name1.txt
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>Hello,<span class="w"> </span>How<span class="w"> </span>are<span class="w"> </span>you?
+</code></pre></div></li>
+<li>
+<p><strong>View file contents:</strong> You can view contents of a single or more files by mentioning the filenames.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>cat<span class="w"> </span>file_name1<span class="w"> </span>file_name2
+</code></pre></div>
+   3. <strong>More &amp; Less options:</strong> If a file having a large number of content that won’t fit in the output terminal then <code>more</code> &amp; <code>less</code> options can be used to indiate additional content.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>cat<span class="w"> </span>file_name1.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>more
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>cat<span class="w"> </span>file_name1.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+</li>
+</ol>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="file-permissions">File permissions<a class="headerlink" href="#file-permissions" title="Permanent link">&para;</a></h3>
+<p>Since Linux is a multi-user operating system, it is necessary to provide security to prevent people from accessing each other’s confidential files.
+So Linux divides authorization into 2 levels,</p>
+<ol>
+<li>
+<p><strong>Ownership:</strong>
+Each file or directory has assigned with 3 types of owners
+i. <strong>User:</strong> Owner of the file who created it.
+ii. <strong>Group:</strong> Group of users with the same access permissions to the file or directory.
+iii. <strong>Other:</strong> Applies to all other users on the system</p>
+</li>
+<li>
+<p><strong>Permissions:</strong>
+Each file or directory has following permissions for the above 3 types of owners.</p>
+<p>i.   <strong>Read:</strong> Give you the authority to open and read a file and lists its content for a directory.</p>
+<p>ii.  <strong>Write:</strong> Give you the authority to modify the contents of a file and add, remove and rename files stored in the directory.</p>
+<p>iii. <strong>Execute:</strong> Give you the authority to run the program in Unix/Linux.</p>
+<p>The permissions are indicated with below characters,</p>
+<div class="highlight"><pre><span></span><code> r = read permission
+
+ w = write permission
+
+ x = execute permission
+
+ \- = no permission
+</code></pre></div>
+<p>The above authorization levels represented in a diagram</p>
+</li>
+</ol>
+<p><img alt="permissions" src="../img/permissions.png" /></p>
+<p>There is a need to restrict own file/directory access to others.</p>
+<p><strong>Change access:</strong>
+The <code>chmod</code> command is used to change the access mode of a file.  This command is used to set permissions (read, write, execute) on a file/directory for the owner, group and the others group.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>chmod [reference][operator][mode] file...
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>Example
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>chmod ugo-rwx test.txt
+</code></pre></div>
+<p>There are 2 ways to use this command,</p>
+<ol>
+<li>
+<p><strong>Absolute mode:</strong>
+The file permissions will be represented in a three-digit octal number.</p>
+<p>The possible permissions types represented in a number format as below.</p>
+<table>
+<thead>
+<tr>
+<th>Permission Type</th>
+<th>Number</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No Permission</td>
+<td>0</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Execute</td>
+<td>1</td>
+<td>--x</td>
+</tr>
+<tr>
+<td>Write</td>
+<td>2</td>
+<td>-w-</td>
+</tr>
+<tr>
+<td>Execute + Write</td>
+<td>3</td>
+<td>-wx</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>4</td>
+<td>r--</td>
+</tr>
+<tr>
+<td>Read + Execute</td>
+<td>5</td>
+<td>r-x</td>
+</tr>
+<tr>
+<td>Read + Write</td>
+<td>6</td>
+<td>rw-</td>
+</tr>
+<tr>
+<td>Read + Write + Execute</td>
+<td>7</td>
+<td>rwx</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>Let's update the permissions in absolute mode with an example as below,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a> chmode 764 test.txt
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Symbolic mode:</strong>
+In the symbolic mode, you can modify permissions of a specific owner unlike absolute mode.</p>
+<p>The owners are represented as below,</p>
+<table>
+<thead>
+<tr>
+<th>Owner</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u</td>
+<td>user/owner</td>
+</tr>
+<tr>
+<td>g</td>
+<td>group</td>
+</tr>
+<tr>
+<td>o</td>
+<td>other</td>
+</tr>
+<tr>
+<td>a</td>
+<td>all</td>
+</tr>
+</tbody>
+</table>
+<p>and the list of mathematical symbols to modify the file permissions as follows,</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Adds permission</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Removes the permission</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Assign the permission</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p><strong>Changing Ownership and Group:</strong>
+It is possible to change the the ownership and group of a file/directory using <code>chown</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>chown user filename
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>chown user:group filename
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>Example:
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>chown John test.txt
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>chown John:Admin test.txt
+</code></pre></div>
+<p><strong>Change group-owner only:</strong>
+Sometimes you may need to change group owner only. In this case, chgrp command need to be used</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>chgrp group_name filename
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>Example:
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>sudo chgrp Administrator test.txt
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="networking">Networking<a class="headerlink" href="#networking" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Display network information:</strong> <code>ifconfig</code> command is used to display all network information(ip address, ports etc)</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>ifconfig -a
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Test connection to a remote machine:</strong> Send an echo request to test connection of a remote machine.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>ping &lt;ip-address&gt; or hostname
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>Example:
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>ping 10.0.0.11
+</code></pre></div>
+</li>
+<li>
+<p><strong>Show IP Address:</strong> Display ip address of a currennt machine</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>hostname -I
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>(OR)
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>ip addr show
+</code></pre></div>
+</li>
+<li>
+<p><strong>Active ports:</strong> Shows active or listening ports</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>netstat -pnltu
+</code></pre></div>
+</li>
+<li>
+<p><strong>Find information about domain:</strong> <code>whois</code> command is used to find out information about a domain, such as the owner of the domain, the owner’s contact information, and the nameservers used by domain.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>whois [domain]
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>Example:
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>whois google.com
+</code></pre></div>
+</li>
+</ol>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="installing-packages">Installing packages<a class="headerlink" href="#installing-packages" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Install package:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>yum install package_name
+</code></pre></div>
+<ol>
+<li><strong>Package description:</strong>
+The info command is used to display brief details about a package.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>yum info package_name
+</code></pre></div>
+<ol>
+<li><strong>Uninstall package:</strong>
+The remove command is used to remove or uninstall package name.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>yum remove package_name
+</code></pre></div></li>
+<li><strong>Install package from local file:</strong></li>
+</ol>
+<p>It is also possible to install package from local file named package_name.rpm.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>rpm -i package_name.rpm
+</code></pre></div>
+<ol>
+<li><strong>Install from source code:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>tar zxvf sourcecode.tar.gz
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>cd sourcecode
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>./configure
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>make
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>make install
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="disk-usage">Disk usage<a class="headerlink" href="#disk-usage" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Synopsis:</strong> <code>du</code> command is used to check the information of disk usage of files and directories on a machine</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>du [OPTION]... [FILE]...
+</code></pre></div>
+<ol>
+<li><strong>Disk usage of a directory:</strong> To find out the disk usage summary of a /home/ directory tree and each of its sub directories</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>du  /home/
+</code></pre></div>
+<ol>
+<li><strong>Disk usage in human readable format:</strong> To find out the disk usage in human readable format</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>du  -h /home/
+</code></pre></div>
+<ol>
+<li><strong>Total disk usage of a directory:</strong> To find out the total disk usage</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>du  -sh /home/
+</code></pre></div>
+<ol>
+<li><strong>Total disk usage of all files and directories:</strong> To find out the total disk usage of files and directories</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>du  -ah /home/
+</code></pre></div>
+<ol>
+<li><strong>Total disk usage of all files and directories upto certain depth:</strong> print the total for a directory only if it is N or fewer levels below the command</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>du  -ah --max-depth 2 /home/
+</code></pre></div>
+<ol>
+<li><strong>Total disk usage with excluded files:</strong> To find out the total disk usage of files and directories, but excludes the files that matches given pattern.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>du -ah --exclude=&quot;*.txt&quot; /home/
+</code></pre></div>
+<ol>
+<li><strong>Help:</strong> This command gives information about <code>du</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>du  --help
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="system-and-hardware-information">System and Hardware information<a class="headerlink" href="#system-and-hardware-information" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Print all information</strong>: <code>uname</code> is mainly used to print system information.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>$<span class="w"> </span>uname<span class="w"> </span>-a
+</code></pre></div>
+<ol>
+<li><strong>Print kernel name</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>$<span class="w"> </span>uname<span class="w"> </span>-s
+</code></pre></div>
+<ol>
+<li><strong>Print kernel release</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>$<span class="w"> </span>uname<span class="w"> </span>-r
+</code></pre></div>
+<ol>
+<li><strong>Print Architecture</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>$<span class="w"> </span>uname<span class="w"> </span>-m
+</code></pre></div>
+<ol>
+<li><strong>Print Operating System</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>$<span class="w"> </span>uname<span class="w"> </span>-o
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="search-files">Search Files<a class="headerlink" href="#search-files" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Pattern search:</strong>
+The <code>grep</code> command is used to search patterns in files.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>grep pattern files
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>grep -i // Case sensitive
+<a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>grep -r // Recursive
+<a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>grep -v // Inverted search
+<a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>
+<a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a>Example:
+<a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a>grep &quot;^hello&quot; test.txt // Hello John
+<a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a>grep -i &quot;hELLo&quot; text.txt // Hello John
+</code></pre></div>
+<ol>
+<li><strong>Find files and directories:</strong></li>
+</ol>
+<p>The <code>find</code> command is used to find or search files and directories by file name, folder name, creation date, modification date, owner and permissions etc and perform subsequent operations on them.</p>
+<p>i. <strong>Search file with name:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>find ./directory_name -name file_name
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>Example:
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>find ./test -name test.txt // ./test/test.txt
+</code></pre></div>
+<p>ii. <strong>Search file with pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>find ./directory_name -name file_pattern
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>Example:
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a>find ./test -name *.txt // ./test/test.txt
+</code></pre></div>
+<p>iii. <strong>Search file with executable action:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>find ./directory_name -name file_name -exec command
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>Example:
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>find ./test -name test.txt -exec rm -i {} \; // Search file and delete it after confirmation
+</code></pre></div>
+<p>iv. <strong>Search for empty files or directories:</strong></p>
+<p>The find command is used to search all empty folders and files in the entered directory or sub-directories.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>find ./directory_name -empty
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>Example:
+<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>find ./test -empty
+<a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>//./test/test1
+<a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>//./test/test2
+<a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a>//./test/test1.txt
+</code></pre></div>
+<p>v. <strong>Search for files with permissions:</strong></p>
+<p>The find command is used to find all the files in the mentioned directory or sub-directory with the given permissions</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>find ./directory_name -perm permission_code
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>Example:
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>find ./test -perm 664
+</code></pre></div>
+<p>vi. <strong>Search text within multiple files:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>find ./ -type f -name file_pattern -exec grep some_text  {} \;
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>Example:
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>find ./ -type f -name &quot;*.txt&quot; -exec grep &#39;World&#39;  {} \; // Hello World
+</code></pre></div>
+<ol>
+<li><strong>Whereis to locate binary or source files for a command:</strong>
+The whereis command in Linux is used to locate the binary, source, and manual page files for a command. i.e, It is used to It is used to find executables of a program, its man pages and configuration files.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>whereis command_name
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>Example:
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a>whereis netstat //netstat:  /bin/netstat /usr/share/man/man8/netstat.8.gz(i.e, executable and location of its man page)
+</code></pre></div>
+<ol>
+<li><strong>Locate to find files:</strong>
+The locate command is used to find the files by name. This command is faster compared to find command because it searches database for the filename instead of searching your filesystem.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>locate [OPTION] PATTERN
+<a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>Example:
+<a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a>locate &quot;*.txt&quot; -n 10 // 10 file search results ending with .txt extension
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
+<p>SSH (Secure Shell) is a network protocol that enables secure remote connections between two systems.</p>
+<ol>
+<li><strong>Connect remote machine using IP address or machine name:</strong> The remote server can be connected with local user name using either host name or IP address</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>ssh &lt;host-name&gt; or &lt;ip-address&gt;
+<a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>
+<a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a>Example:
+<a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a>ssh 192.111.66.100
+<a id="__codelineno-70-5" name="__codelineno-70-5" href="#__codelineno-70-5"></a>ssh test.remoteserver.com
+</code></pre></div>
+<ol>
+<li><strong>Connect remote machine using username:</strong> It is also possible specify a user for an SSH connection.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>ssh username@hostname_or_ip-address
+<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>
+<a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>Example:
+<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>ssh john@192.0.0.22
+<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a>ssh john@test.remoteserver.com
+</code></pre></div>
+<ol>
+<li><strong>:Connect remote machine using custom port</strong> By default, the SSH server listens for a connection on port 22. But you can also specify the custom port.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>ssh &lt;host-name&gt; or &lt;ip-address&gt; -p port_number
+<a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>
+<a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>Example:
+<a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>ssh test.remoteserver.com -p 3322
+</code></pre></div>
+<ol>
+<li><strong>Generate SSH keys using keygen:</strong> SSH Keygen is used to generate a key pair which consists of public and private keys to improve the security of SSH connections.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>ssh-keygen -t rsa
+</code></pre></div>
+<ol>
+<li><strong>Copying SSH keys to servers:</strong> For SSH authentication, <code>ssh-copy-id</code> command will be used to copy public key(id_rsa.pub) to server.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>ssh-copy-id hostname_or_IP
+</code></pre></div>
+<ol>
+<li><strong>Copy a File Remotely over SSH:</strong> SCP tool is used to securely copy files over the SSH protocol.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>scp fileName user@remotehost:destinationPath
+<a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>
+<a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>Example:
+<a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a>scp test.txt test@10.0.0.64:/home/john/Desktop
+</code></pre></div>
+<ol>
+<li><strong>Edit SSH Config File</strong> SSH server options customized by editing the settings in <code>sshd_config</code> file.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>sudo vim /etc/ssh/sshd_config
+</code></pre></div>
+<ol>
+<li><strong>Run commands on a remote server</strong> SSH commands can be executed on remote machine using the local machine.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>ssh test.remoteserver.com mkdir NewDirectoryName // Creating directory on remote machine
+</code></pre></div>
+<ol>
+<li><strong>Restart SSH service:</strong> You need to restart the service in Linux after making changes to SSH configuration.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo ssh service restart
+<a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>(or)
+<a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>sudo sshd service restart
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="vivim-commands">Vi/Vim-commands<a class="headerlink" href="#vivim-commands" title="Permanent link">&para;</a></h3>
+<p>Vi editor is the most popular text editor from the early days of Unix. Whereas Vim(Vi IMproved) is an improved version of vi editor to be used in CLI (command line interface) for mainly text editing tasks in many configuration files. Some of the other alternatives are Elvis, Nvi, Nano, Joe, and Vile.
+It has two main operation modes,</p>
+<ol>
+<li><strong>Command Mode:</strong> It allows the entry of commands to manipulate text.</li>
+<li><strong>Entry mode(Or Insert mode):</strong> It allows typed characters on the keyboard into the current file.</li>
+</ol>
+<h4 id="1-start-with-vi-editor">1. Start with Vi Editor<a class="headerlink" href="#1-start-with-vi-editor" title="Permanent link">&para;</a></h4>
+<p>You can create a new file or open an existing file using <code>vi filename</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a> vi &lt;filename_NEW&gt; or &lt;filename_EXISTING&gt; // Create a new file or open an existing file
+<a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>
+<a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a> Example:
+<a id="__codelineno-79-4" name="__codelineno-79-4" href="#__codelineno-79-4"></a> vi first.txt
+</code></pre></div>
+<p>Let's see how do you create file, enter the content and leave the CLI by saving the changes.</p>
+<ol>
+<li>Create a new file named <code>first.txt</code></li>
+<li>Press <code>i</code> to enter the insert mode</li>
+<li>Enter the text "Hello World!"</li>
+<li>Save the text and exit by pressing <code>:wq!</code> command</li>
+<li>Check the entered text</li>
+</ol>
+<h4 id="2-cursor-movement">2. Cursor movement<a class="headerlink" href="#2-cursor-movement" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>These commands will be used in Command mode.
+</code></pre></div>
+<h5 id="move-cursor">Move cursor<a class="headerlink" href="#move-cursor" title="Permanent link">&para;</a></h5>
+<p>You can use arrow keys(left, right, up and down) to move the cursor on the terminal. But you can also other keys for this behavior.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a> h        # Move left
+<a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a> j        # Move down
+<a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a> k        # Move up
+<a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a> l        # Move right
+</code></pre></div>
+<h5 id="jump-one-word">Jump one word<a class="headerlink" href="#jump-one-word" title="Permanent link">&para;</a></h5>
+<p>These commands used to jump one word at a time</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>w        # Jump forwards to the start of a word
+<a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>W        # Jump forwards to the start of a WORD
+<a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>e        # Jump forwards to the start of a word
+<a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>E        # Jump forwards to the start of a WORD
+<a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>b        # Jump backwords to the start of a word
+<a id="__codelineno-81-6" name="__codelineno-81-6" href="#__codelineno-81-6"></a>B        # Jump backwords to the start of a WORD
+</code></pre></div>
+<h5 id="jump-to-start-or-end-of-a-line-or-next-line">Jump to start or end of a line or next line<a class="headerlink" href="#jump-to-start-or-end-of-a-line-or-next-line" title="Permanent link">&para;</a></h5>
+<p>These commands used to jump starting or ending of a line or a next line.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>^        # Jump to the start of a current line
+<a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>$        # Jump to the end of a current line
+<a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a>return   # Jump to the start of a next line
+</code></pre></div>
+<h5 id="move-sides">Move sides<a class="headerlink" href="#move-sides" title="Permanent link">&para;</a></h5>
+<p>These commands used to moves all sides of the screen</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>Backspace # Move cursor one character to the left
+<a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a>Spacebar  # Move cursor one character to the right
+<a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a>H(High)   # Move cursor to the top of the screen
+<a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a>M(Middle) # Move cursor to the middle of the screen
+<a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a>L(Low)    # Move cursor to the bottom of the screen
+</code></pre></div>
+<h5 id="paging-and-scrolling">Paging and Scrolling<a class="headerlink" href="#paging-and-scrolling" title="Permanent link">&para;</a></h5>
+<p>Paging is used to moves the cursor up or down through the text a full screen at a time. Whereas Scrolling happens line by line.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>Ctrl + f     # move forward one full screen
+<a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a>Ctrl + b     # move backward one full screen
+<a id="__codelineno-84-3" name="__codelineno-84-3" href="#__codelineno-84-3"></a>Ctrl + d     # move forward half a screen
+<a id="__codelineno-84-4" name="__codelineno-84-4" href="#__codelineno-84-4"></a>Ctrl + u     # move backward half a screen
+</code></pre></div>
+<h5 id="inserting-text">Inserting Text<a class="headerlink" href="#inserting-text" title="Permanent link">&para;</a></h5>
+<p>These commands places vi in entry mode from command mode. First, you need to be in command mode to use the below commands.</p>
+<h6 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h6>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>i    # Insert text to the left of the cursor
+<a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>I    # Insert text at the beginning of a line
+<a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a>ESC  # Exit insert mode
+</code></pre></div>
+<h6 id="append">Append<a class="headerlink" href="#append" title="Permanent link">&para;</a></h6>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>a    # Insert(or Append) text to the right of the cursor
+<a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a>A    # Insert(or Append) text at the end of a line
+</code></pre></div>
+<h6 id="open-a-line">Open a line<a class="headerlink" href="#open-a-line" title="Permanent link">&para;</a></h6>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>o    # Open a line below the current cursor position
+<a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a>O    # open a line above the current cursor position
+</code></pre></div>
+<h5 id="editing-text">Editing Text<a class="headerlink" href="#editing-text" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p><strong>Change word:</strong> Change word/part of word to right of cursor</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>cw
+</code></pre></div>
+</li>
+<li>
+<p><strong>Change line</strong> Change entire line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>cc
+</code></pre></div>
+</li>
+<li>
+<p><strong>Change line from specific character</strong> Change from cursor to end of line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>C
+</code></pre></div>
+</li>
+</ol>
+<h5 id="deleting-text">Deleting Text<a class="headerlink" href="#deleting-text" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p><strong>Deleting One Character:</strong> Position the cursor over the character to be deleted and type x</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>x
+<a id="__codelineno-91-2" name="__codelineno-91-2" href="#__codelineno-91-2"></a>X       //To delete one character before the cursor
+</code></pre></div>
+2. <strong>Deleting a Word:</strong> Position the cursor at the beginning of the word and type dw</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>dw
+</code></pre></div>
+3. <strong>Deleting a Line:</strong> Position the cursor anywhere on the line and type dd.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>dd
+</code></pre></div>
+</li>
+</ol>
+<h5 id="cut-copy-paste">Cut, Copy &amp; Paste<a class="headerlink" href="#cut-copy-paste" title="Permanent link">&para;</a></h5>
+<p>Copy, Cut and Paste operations can be done in either Normal or visual Mode.</p>
+<ol>
+<li><strong>Normal mode:</strong> This mode appears on click of <code>Esc</code> key.</li>
+</ol>
+<p><strong>Copy</strong> There are various copy or yank commands based on amount of text to be copied. The <code>y</code> character is used to perform this operation.</p>
+<p>i. Copy an entire line: Just place the cursor at the beginning of the line and type <code>yy</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>yy
+</code></pre></div>
+<p>ii.Copy three lines: Just place the cursor from where to start copying and type <code>3yy</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>3yy
+</code></pre></div>
+<p>iii. Copy word with trailing whitespace: Place the cursor at the beginning of the word and type <code>yaw</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>yaw
+</code></pre></div>
+<p>iv. Copy word without trailing whitespace: Place the cursor at the beginning of the word and type <code>yiw</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>yiw
+</code></pre></div>
+<p>v. Copy right of the cursor: Copy text right of the cursor to the end of line using <code>y$</code> command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>y$
+</code></pre></div>
+<p>vi.Copy left of the cursor: Copy text left of the cursor to the end of line using <code>y^</code> command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>y^
+</code></pre></div>
+<p>vii. Copy text between the cursor and character: Copy text between the cursor and specified character.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>ytx(Copy until x and x is excluded)
+<a id="__codelineno-100-2" name="__codelineno-100-2" href="#__codelineno-100-2"></a>yfx(Copy until x and x is included)
+</code></pre></div>
+<p><strong>Cut</strong> There are various cutting or deleting commands based on amount of text to be deleted. The <code>d</code> character is used to perform this operation.</p>
+<p>i. Cut entire line: Cut the entire line where the cursor is located</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>dd
+</code></pre></div>
+<p>ii.Cut three lines: Cut the three lines starting from the place where cursor is located</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>3dd
+</code></pre></div>
+<p>iii.Cut right of the cursor: Cut the text from the right of the cursor till the end of line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>d$
+</code></pre></div>
+<p>iii.Cut left of the cursor: Cut the text from the left of the cursor till the beginning of line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>d^
+</code></pre></div>
+<p><strong>Paste</strong> This operation is performed using <code>p</code> command to paste the selected text</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>p
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Visual Mode</strong> In this mode, first select the text using below keys</p>
+<ol>
+<li>v (lowercase): To select individual characters</li>
+<li>V (uppercase): To select the entire line</li>
+<li>Ctrl+v: To select by block</li>
+</ol>
+<p>and perform copy, cut and paste operations using y,d and p commands</p>
+</li>
+</ol>
+<h5 id="exiting">Exiting<a class="headerlink" href="#exiting" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>These commands are used to exit from the file.
+```cmd
+:w      # Write (save) the file, but don&#39;t exit
+:wq     # Write (save) and quit
+:wq!    # Force write (save) and quit
+:q      # Quit, but it fails if anything has changed
+:q!     # Quit and throw away for any changes
+```
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="toptaskmanager-command">Top/TaskManager Command<a class="headerlink" href="#toptaskmanager-command" title="Permanent link">&para;</a></h3>
+<p>top: The <code>top</code> command provides dynamic real-time viewing of the running system. It can display system summary information as well as a list of tasks currently being managed by the Linux kernel.</p>
+<h4 id="options">options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b</td>
+<td>Batch mode</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>Number of iterations</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>Sec delay between updates</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>Delay time in seconds</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>Monitor process ID</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>top [options]
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="kill-command">Kill Command<a class="headerlink" href="#kill-command" title="Permanent link">&para;</a></h3>
+<p>kill: The kill command sends a signal to a process. Useful when trying to terminate a hung process.</p>
+<p><strong>options:</strong>
+| Option | Description                                   |
+|--------|-----------------------------------------------|
+| -s     | Specify the signal to send (e.g., -s SIGTERM) |
+| -l     | List available signals                        |
+| -n     | Process group ID                              |
+| -signal| Specify the signal using signal name or number|
+| -p     | Specify the process ID to be signaled         |</p>
+<h4 id="kill-command-options">kill Command Options<a class="headerlink" href="#kill-command-options" title="Permanent link">&para;</a></h4>
+<ol>
+<li>-s Option
+ Specifies the signal to send to the process. Use in the format -s SIGNAL. For example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>kill -s SIGTERM &lt;process_id&gt;
+</code></pre></div>
+<ol>
+<li>-l Option
+Lists available signals that can be used with the kill command. This option does not send any signal; it only displays a list of signals.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>kill -l
+</code></pre></div>
+3. -n Option
+Specifies the process group ID. This option allows you to send a signal to a process group rather than an individual process.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>kill -n &lt;process_group_id&gt;
+</code></pre></div>
+4. -signal Option
+Specifies the signal to send using either the signal name or number directly.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>kill -TERM &lt;process_id&gt;
+</code></pre></div>
+5. -p Option
+Specifies the process ID to be signaled. Use in the format -p <process_id>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>kill -p &lt;process_id&gt;
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="history-command-options">History Command Options<a class="headerlink" href="#history-command-options" title="Permanent link">&para;</a></h3>
+<p>The history command shows a list of previously issued commands.</p>
+<h4 id="history-command-options_1">history Command Options<a class="headerlink" href="#history-command-options_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-c</code></td>
+<td>Clears the entire command history.</td>
+</tr>
+<tr>
+<td><code>-d offset</code></td>
+<td>Deletes the history entry at the specified offset.</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>Appends the current session's history to the history file.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Reads the history file and appends entries to the session.</td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td>Prevents command numbers from being displayed.</td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>Writes the current session's history to the history file.</td>
+</tr>
+<tr>
+<td>`-s "<command>"</td>
+<td>Appends the specified entry to the end of the history list.</td>
+</tr>
+<tr>
+<td><code>-p offset</code></td>
+<td>Prints the history entry at the specified offset.</td>
+</tr>
+<tr>
+<td><code>-f file</code></td>
+<td>Reads history entries from the specified file.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>-c Option
+Clears the entire command history.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>history -c
+</code></pre></div></p>
+</li>
+<li>
+<p>-d offset Option
+Deletes the history entry at the specified offset.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>history -d &lt;offset&gt;
+</code></pre></div>
+<ol>
+<li>-a Option
+Appends the current session's history to the history file.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>history -a
+</code></pre></div>
+<ol>
+<li>-r Option
+Reads the history file and appends the entries to the current session's history.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>history -r
+</code></pre></div>
+<ol>
+<li>-n Option
+Prevents command numbers from being displayed when using the history command.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>history -n
+</code></pre></div>
+6. -w Option
+Writes the current session's history to the history file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>history -w
+</code></pre></div>
+<ol>
+<li>-s Option
+Appends the specified entry to the end of the history list.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a>history -s &quot;&lt;command&gt;&quot;
+</code></pre></div>
+<ol>
+<li>-p Option
+Prints the history entry at the specified offset.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>history -p &lt;offset&gt;
+</code></pre></div>
+<ol>
+<li>-f file Option
+Reads history entries from the specified file and appends them to the history list.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a>history -f &lt;file&gt;
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+<h3 id="curl-command">Curl Command<a class="headerlink" href="#curl-command" title="Permanent link">&para;</a></h3>
+<p>Curl: The curl command transfers data to or from a server. It supports dozens of protocols, including HTTP, HTTPS, FTP, SFTP, Telnet, DICT, LDAP, LDAPS, FILE, IMAP, SMTP, POP3, RTSP and RTMP.</p>
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-X, --request &lt;command&gt;</code></td>
+<td>Specify the HTTP request method (GET, POST, etc.).</td>
+</tr>
+<tr>
+<td><code>-H, --header &lt;header&gt;</code></td>
+<td>Pass custom headers to the request.</td>
+</tr>
+<tr>
+<td><code>--data &lt;data&gt;</code></td>
+<td>HTTP POST data.</td>
+</tr>
+<tr>
+<td><code>--data-urlencode &lt;data&gt;</code></td>
+<td>URL encode the POST data.</td>
+</tr>
+<tr>
+<td><code>--form &lt;name=content&gt;</code></td>
+<td>Specify multipart/form-data POST data.</td>
+</tr>
+<tr>
+<td><code>-d, --data-raw &lt;data&gt;</code></td>
+<td>Send data as-is without any encoding.</td>
+</tr>
+<tr>
+<td><code>-i, --include</code></td>
+<td>Include HTTP headers in the output.</td>
+</tr>
+<tr>
+<td><code>--url &lt;url&gt;</code></td>
+<td>Specify the URL to send the request to.</td>
+</tr>
+<tr>
+<td><code>-o, --output &lt;file&gt;</code></td>
+<td>Write output to a file instead of stdout.</td>
+</tr>
+<tr>
+<td><code>-O, --remote-name</code></td>
+<td>Save the file with the same name as in the URL.</td>
+</tr>
+<tr>
+<td><code>-L, --location</code></td>
+<td>Follow redirects.</td>
+</tr>
+<tr>
+<td><code>--user &lt;user:password&gt;</code></td>
+<td>Specify the user and password for server authentication.</td>
+</tr>
+<tr>
+<td><code>-u, --user-agent &lt;agent&gt;</code></td>
+<td>Set the user-agent string.</td>
+</tr>
+<tr>
+<td><code>--cookie &lt;data&gt;</code></td>
+<td>Send cookies from string/file.</td>
+</tr>
+<tr>
+<td><code>--cookie-jar &lt;file&gt;</code></td>
+<td>Save cookies to a file after receiving them.</td>
+</tr>
+<tr>
+<td><code>--compressed</code></td>
+<td>Request compressed response.</td>
+</tr>
+<tr>
+<td><code>-v, --verbose</code></td>
+<td>Make the operation more talkative for debugging.</td>
+</tr>
+<tr>
+<td><code>-h, --help</code></td>
+<td>Display help information.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Basic GET Request:
+Sends a simple GET request to the specified URL.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>curl http://example.com
+</code></pre></div>
+<ol>
+<li>Specify Request Method:
+Specifies a request method other than the default GET.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>curl -X POST http://example.com
+</code></pre></div>
+3. Include Headers:</p>
+<p>Includes custom headers in the request.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>curl -H &quot;Content-Type: application/json&quot; http://example.com
+</code></pre></div>
+4. Send POST Data:
+Sends data as POST request payload.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a>curl -X POST --data &quot;key1=value1&amp;key2=value2&quot; http://example.com
+</code></pre></div>
+<ol>
+<li>Save Output to File:
+Writes the output to a specified file.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>curl -o output.html http://example.com
+</code></pre></div>
+6. Download File:
+Downloads a file and saves it with the same name as in the URL.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>curl -O http://example.com/file.zip
+</code></pre></div>
+<p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "content.code.copy"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>
